@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/livemind/hariomkarn.online 
+    - /bin/cp * $DEPLOYPATH
