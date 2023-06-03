@@ -29,6 +29,7 @@ section {
     padding: 100px 0;
 }
 
+
 html {
     font-family: 'Poppins', sans-serif;
 }
@@ -76,6 +77,7 @@ p {
 
 img {
     width: 100%;
+    pointer-events: none;
 }
 
 .t-shadow {
@@ -111,6 +113,29 @@ img {
     --bs2: #7993ff;
     --fbs1: #25307a;
     --fbs2: #4356da;
+}
+
+// scrollbar styling
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: white;
 }
 
 // color swap styling
@@ -355,7 +380,7 @@ img {
                     100% {
                         transform: rotate(360deg);
                     }
-                }
+                }                
 
                 i {
                     font-size: 50px;
@@ -373,6 +398,21 @@ img {
                         0 5px 10px rgba(0, 0, 0, .25),
                         0 10px 10px rgba(0, 0, 0, .2),
                         0 20px 20px rgba(0, 0, 0, .15);
+                }
+
+                &:hover{
+                    i{
+                        animation: scaleup 0.05s linear 0s 7 alternate both;
+                    }
+                }
+
+                @keyframes scaleup {
+                    0% {
+                        transform: translateY(-4px) rotate(-45deg);
+                    }
+                    100% {
+                        transform: translatey(4px) rotate(-45deg);
+                    }
                 }
             }
         }
@@ -656,6 +696,7 @@ img {
                 background: var(--blue);
                 box-shadow: inset 5px 5px 10px var(--bs1),
                     inset -5px -5px 10px var(--bs2);
+                resize: none;
             }
 
             button {
@@ -828,8 +869,20 @@ img {
                 width: 20px;
                 height: 2px;
                 background-color: white;
-                margin: 7px;
+                margin: 4px;
 
+            }
+        }
+
+        .mobile-icon.cross{
+            .bar:nth-child(1){
+                transform: rotate(-45deg) translateY(5px) translateX(-3px);
+            }
+            .bar:nth-child(2){
+                opacity: 0;
+            }
+            .bar:nth-child(3){
+                transform: rotate(45deg) translateY(-5px) translateX(-3px);
             }
         }
     }

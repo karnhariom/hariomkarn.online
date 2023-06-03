@@ -42,6 +42,7 @@ const menu = document.querySelector(".mobile-icon");
 
 menu.addEventListener("click", () =>{
     navbar.classList.toggle("open");
+    menu.classList.toggle("cross");
 });
 
 

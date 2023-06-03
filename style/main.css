@@ -79,6 +79,7 @@ p {
 
 img {
   width: 100%;
+  pointer-events: none;
 }
 
 .t-shadow {
@@ -105,6 +106,27 @@ img {
   --fbs2: #4356da;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: white;
+}
+
 .color-box {
   position: fixed;
   bottom: 40px;
@@ -126,8 +148,7 @@ img {
   top: 50%;
   transform: translateY(-50%);
   right: -20px;
-  -ms-writing-mode: tb-lr;
-      writing-mode: vertical-lr;
+  writing-mode: vertical-lr;
 }
 .color-box button {
   width: 15px;
@@ -297,13 +318,7 @@ img {
   box-shadow: inset 5px 5px 13px #9d9d9d, inset -5px -5px 13px #ffffff;
 }
 .hero .hero-right .icon-box .box .fa-gear {
-  -webkit-animation: irotate 2s linear 0s infinite normal forwards;
-          animation: irotate 2s linear 0s infinite normal forwards;
-}
-@-webkit-keyframes irotate {
-  100% {
-    transform: rotate(360deg);
-  }
+  animation: irotate 2s linear 0s infinite normal forwards;
 }
 @keyframes irotate {
   100% {
@@ -315,6 +330,17 @@ img {
   color: var(--blue);
   transform: rotate(-45deg);
   text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+}
+.hero .hero-right .icon-box .box:hover i {
+  animation: scaleup 0.05s linear 0s 7 alternate both;
+}
+@keyframes scaleup {
+  0% {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+  100% {
+    transform: translatey(4px) rotate(-45deg);
+  }
 }
 
 .about .abt {
@@ -331,7 +357,6 @@ img {
 }
 .about .abt .abt-right .abt-img {
   padding: 15px;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
@@ -520,9 +545,6 @@ img {
 #contact .cont-right form ::-moz-placeholder {
   color: rgba(255, 255, 255, 0.63);
 }
-#contact .cont-right form :-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.63);
-}
 #contact .cont-right form ::placeholder {
   color: rgba(255, 255, 255, 0.63);
 }
@@ -536,6 +558,7 @@ img {
   border-radius: 10px;
   background: var(--blue);
   box-shadow: inset 5px 5px 10px var(--bs1), inset -5px -5px 10px var(--bs2);
+  resize: none;
 }
 #contact .cont-right form button {
   padding: 10px 20px;
@@ -658,7 +681,16 @@ img {
     width: 20px;
     height: 2px;
     background-color: white;
-    margin: 7px;
+    margin: 4px;
+  }
+  #header .mobile-icon.cross .bar:nth-child(1) {
+    transform: rotate(-45deg) translateY(5px) translateX(-3px);
+  }
+  #header .mobile-icon.cross .bar:nth-child(2) {
+    opacity: 0;
+  }
+  #header .mobile-icon.cross .bar:nth-child(3) {
+    transform: rotate(45deg) translateY(-5px) translateX(-3px);
   }
   .about .abt {
     display: flex;
