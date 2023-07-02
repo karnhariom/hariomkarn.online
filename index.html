@@ -9,8 +9,9 @@
     <meta name="theme-color" content="#319197" media="(prefers-color-scheme: light)">
     <title>Hariom Karn</title>
     <link rel="icon" type="image/x-icon" href="./images/favicon.png">
-    <link rel="stylesheet" href="./style/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style/main.css">
 </head>
 
 <body>
@@ -41,8 +42,8 @@
 
     <section class="hero container" id="home">
         <div class="hero-left">
-            <h2 class="t-shadow">HARIOM KARN</h2>
-            <h4 class="t-shadow">FRONTEND WEB DEVELOPER</h4>
+            <h2 data-aos="fade-right" data-aos-duration="1000" class="t-shadow">HARIOM KARN</h2>
+            <h4 data-aos="fade-right" data-aos-duration="2000" class="t-shadow">FRONTEND WEB DEVELOPER</h4>
         </div>
         <div class="hero-right">
             <div class="icon-box">
@@ -80,7 +81,7 @@
     <!-- about section  -->
 
     <section class="about container" id="about">
-        <h2 class="t-shadow t-center heading">About Myself</h2>
+        <h2 data-aos="zoom-in" class="t-shadow t-center heading">About Myself</h2>
 
         <div class="abt">
             <div class="abt-left">
@@ -107,7 +108,7 @@
     <!-- skill section  -->
 
     <section id="skills" class="container">
-        <h2 class="t-shadow t-center heading">My Skills</h2>
+        <h2 data-aos="zoom-in" class="t-shadow t-center heading">My Skills</h2>
 
         <div class="Skills">
             <div class="skills-left">
@@ -160,7 +161,7 @@
     <!-- projects section  -->
 
     <section id="projects" class="container">
-        <h2 class="t-shadow t-center heading">My Works</h2>
+        <h2 data-aos="zoom-in" class="t-shadow t-center heading">My Works</h2>
 
         <div class="projects">
             <div class="project" style="grid-area: proj-1;">
@@ -228,7 +229,7 @@
     <section id="contact" class="container">
         <div class="cont-left">
             <div class="text">
-                <h2 class="t-shadow heading">Let’s Work Together</h2>
+                <h2 data-aos="fade-right" class="t-shadow heading">Let’s Work Together</h2>
                 <div class="p-box">
                     <p>Do you have a question, an idea, or a project you need help with? Contact me!</p>
                 </div>
@@ -264,7 +265,10 @@
 
 
 
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="./js/app.js"></script>
 </body>
 
